@@ -2,8 +2,10 @@ body {
 	margin: 0px;
 	font-family: 'Roboto', sans-serif;
 }
+body::-webkit-scrollbar { 
+    display: none; 
+}
 /* Body Header */
-
 #body-header {
 	background-image: url("media/sandip-karangiya-jbHJXI2Vi5Q-unsplash.jpg");
 	height: 75vh;
@@ -68,70 +70,7 @@ body {
 	box-shadow: 0px 0px 24px 5px white;
 }
 
-#about {
-	height: auto;
-	width: 100%;
-	position: relative;
-}
-
-#my-image
-    /* this is the div */ {
-	height: 15rem;
-	width: 15rem;
-	margin: auto;
-	margin-top: -15vh;
-	border: 4px solid white;
-	border-radius: 50%;
-	box-shadow: 0px 0px 12px 2px blue;
-}
-
-@media screen and (max-width: 660px) {
-	#body-header {
-		height: 45vh;
-	}
-	.horizontal-list {
-		font-size: 16px;
-	}
-	.horizontal-list li {
-		margin: 0px 5px;
-	}
-	#my-name {
-		font-size: 2rem;
-	}
-	#name-social-container {
-		margin-top: 6vh;
-	}
-	.social-icons li a img {
-		height: 40px;
-		width: 40px;
-	}
-	.social-icons {
-		margin-top: 20px;
-	}
-	#my-image
-        /* this is the div */ {
-		height: 10rem;
-		width: 10rem;
-		margin-top: -10vh;
-	}
-}
-
-#my-image img {
-	height: 100%;
-	width: 100%;
-	border-radius: 50%;
-	/* these height and width are written in percentages, and percentage is a relative unit. so both of them will be 100% of their parent */
-}
-
-.about-text {
-	margin: 5vh 20vw 5vh 20vw;
-	font-family: monospace;
-	font-weight: 900;
-	color: grey;
-	font-size: 20px;
-	text-align: justify;
-}
-
+/* section classes*/
 section {
 	width: 100%;
 	height: auto;
@@ -170,6 +109,42 @@ section:nth-child(2n + 1) {
 	height: 40px;
 	/* to adjust skills image size */
 }
+/* about section */
+#about {
+	height: auto;
+	width: 100%;
+	position: relative;
+	
+}
+
+#my-image
+/* this is the div */ {
+	height: 15rem;
+	width: 15rem;
+	margin: auto;
+	margin-top: -15vh;
+	border: 4px solid white;
+	border-radius: 50%;
+	box-shadow: 0px 0px 12px 2px blue;
+}
+
+#my-image img {
+	height: 100%;
+	width: 100%;
+	border-radius: 50%;
+	/* these height and width are written in percentages, and percentage is a relative unit. so both of them will be 100% of their parent */
+}
+
+.about-text {
+	margin: 5vh 20vw 5vh 20vw;
+	font-family: monospace;
+	font-weight: 900;
+	color: grey;
+	font-size: 20px;
+	/* text-align: justify; */
+	align-content: center;
+	/* word-spacing: normal; */
+}
 /* skills */
 
 #skill-heading {
@@ -185,7 +160,7 @@ section:nth-child(2n + 1) {
 	width: 70%;
 	height: inherit;
 	/* height:100px;
-    border:2px solid black; */
+	border:2px solid black; */
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-around;
@@ -272,7 +247,10 @@ section:nth-child(2n + 1) {
 	padding-left: 15px;
 	padding-top: 10px;
 }
-/* timeline */
+
+
+
+/* timeline work experience section */
 
 .timeline-divider {
 	position: absolute;
@@ -379,28 +357,31 @@ i.e., sticky will be fixed only till the end of the container, But fixed will be
 }
 
 .timeline-box-title:nth-child(2n + 1) {
-	text-align: right;
+	text-align: left;
 }
 
 .timeline-box-title:nth-child(2n) {
 	text-align: left;
 }
+.text-align{
+text-align: end !important;
+}
 /* .timeline-box:nth-child(2n+1) .timeline-box-headings span:nth-child(2)
 {
-    position:relative;
+	position:relative;
     align-items:flex-end;
     flex-wrap: wrap;
     margin: 13px;
 }
 .timeline-box:nth-child(2n) .timeline-box-headings span:nth-child(2)
 {
-    position:relative;
+	position:relative;
     align-items:flex-start;
 } */
 
 .timeline-box-company-name {
 	color: orange;
-	font-size: large;
+	/* font-size: large; */
 	font-family: comic sans ms;
 	font-weight: bold;
 }
@@ -420,6 +401,221 @@ i.e., sticky will be fixed only till the end of the container, But fixed will be
 	justify-content: center;
 }
 
+
+/* portfolio */
+
+.portfolio-display {
+	width: 100%;
+	height: inherit;
+	/* height:100px;
+	border:2px solid black; */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.project {
+	width: 400px;
+	margin: 5px;
+	padding-right:15px;
+	padding-bottom:10px;
+	border-radius: 5px;
+	line-height: 30px;
+}
+/* 
+.project:nth-child(1)>ul>li>ol>li>a
+{
+	text-decoration:none;
+	color:blueviolet;
+}
+.project:nth-child(2)>ul>li>ol>li>a
+{
+	text-decoration:none;
+	color:red;
+}
+.project:nth-child(3)>ul>li>ol>li>a
+{
+	text-decoration:none;
+	color:green;
+}
+
+
+.project:nth-child(1)
+{
+	background-color:rgba(98, 0, 255, 0.1)
+}
+.project:nth-child(2)
+{
+	background-color:rgba(255, 0, 0, 0.1)
+}
+.project:nth-child(3)
+{
+	background-color:rgba(0, 128, 21, 0.1)
+} */
+#portfolio-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 50px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+}
+
+.portfolio-image-container {
+    max-width: 300px;
+    overflow: hidden;
+    margin: 30px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.portfolio-image-container img {
+    width: 100%;
+    height: 100%;
+}
+
+.portfolio-details {
+    transition: all 0.5s ease-in-out;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    color: transparent;
+    text-align: center;
+    padding: 10px;
+}
+
+.portfolio-image-container:hover {
+    box-shadow: 0 0 20px #74ADC8;
+}
+
+.portfolio-image-container:hover .portfolio-details {
+    background-color: #80808078;
+    color: white;
+}
+
+/* contact section */
+
+#contact {
+	background: linear-gradient(-45deg, red -100%, blue 200%);
+}
+
+.contact-content {
+	width: 85%;
+	height: inherit;
+	/* height:100px;
+	border:2px solid black; */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	align-items: center;
+	padding-bottom: 40px;
+	flex-direction: row;
+}
+
+.contact-block {
+	height: auto;
+	width: 40%;
+	background-color: rgba(255, 0, 191, 0.1);
+	min-width: 170px;
+	margin: 12px;
+}
+
+#contact-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#contact-form div {
+	margin: 5%;
+	width: 67%;
+}
+
+#contact-form div:nth-child(4) {
+	width: auto !important;
+}
+
+#contact-form div input {
+	background-color: rgba(0, 0, 0, 0);
+	border-width: 0px 0px 2px 0px;
+	border-color: white;
+	width: 100%;
+	font-size: 20px;
+	color: white;
+}
+
+/* send message button */
+
+#send_message {
+	background-color: rgba(0, 0, 0, 0);
+	border: 3px solid white;
+	color: white;
+	border-style: solid;
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+	font-family: sans-serif;
+}
+/* second block in contact section */
+
+.contact-block {
+	color: white;
+	font-size: 20px;
+	padding: 40px;
+}
+
+.contact-block div span img {
+	margin-bottom: -9px;
+}
+
+.contact-block div p {
+	text-align: justify;
+	margin-left: 20px;
+	font-family: sans-serif;
+}
+
+#my-info {
+	margin: 30px;
+}
+
+#my-info span:nth-child(2) {
+	margin-left: 20px;
+	font-family: sans-serif;
+}
+@media screen and (max-width: 660px) {
+	#body-header {
+		height: 45vh;
+	}
+	.horizontal-list {
+		font-size: 16px;
+	}
+	.horizontal-list li {
+		margin: 0px 5px;
+	}
+	#my-name {
+		font-size: 2rem;
+	}
+	#name-social-container {
+		margin-top: 6vh;
+	}
+	.social-icons li a img {
+		height: 40px;
+		width: 40px;
+	}
+	.social-icons {
+		margin-top: 20px;
+	}
+	#my-image
+		/* this is the div */ {
+		height: 10rem;
+		width: 10rem;
+		margin-top: -10vh;
+	}
+}
 @media screen and (max-width: 900px) {
 	.timeline-divider {
 		left: 5%;
@@ -481,146 +677,7 @@ i.e., sticky will be fixed only till the end of the container, But fixed will be
 		align-items: flex-start !important;
 	}
 }
-/* portfolio */
 
-.portfolio-display {
-	width: 100%;
-	height: inherit;
-	/* height:100px;
-    border:2px solid black; */
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-}
-
-.project {
-	width: 400px;
-	margin: 5px;
-	padding-right:15px;
-	padding-bottom:10px;
-	border-radius: 5px;
-	line-height: 30px;
-}
-
-.project:nth-child(1)>ul>li>ol>li>a
-{
-	text-decoration:none;
-	color:blueviolet;
-}
-.project:nth-child(2)>ul>li>ol>li>a
-{
-	text-decoration:none;
-	color:red;
-}
-.project:nth-child(3)>ul>li>ol>li>a
-{
-	text-decoration:none;
-	color:green;
-}
-
-
-.project:nth-child(1)
-{
-	background-color:rgba(98, 0, 255, 0.1)
-}
-.project:nth-child(2)
-{
-	background-color:rgba(255, 0, 0, 0.1)
-}
-.project:nth-child(3)
-{
-	background-color:rgba(0, 128, 21, 0.1)
-}
-/* contact section */
-
-#contact {
-	background: linear-gradient(-45deg, red -100%, blue 200%);
-}
-
-.contact-content {
-	width: 85%;
-	height: inherit;
-	/* height:100px;
-    border:2px solid black; */
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-around;
-	align-items: center;
-	padding-bottom: 40px;
-	flex-direction: row;
-}
-
-.contact-block {
-	height: auto;
-	width: 40%;
-	background-color: rgba(255, 0, 191, 0.1);
-	min-width: 170px;
-	margin: 12px;
-}
-
-#contact-form {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-#contact-form div {
-	margin: 5%;
-	width: 67%;
-}
-
-#contact-form div:nth-child(4) {
-	width: auto !important;
-}
-
-#contact-form div input {
-	background-color: rgba(0, 0, 0, 0);
-	border-width: 0px 0px 2px 0px;
-	border-color: white;
-	width: 100%;
-	font-size: 20px;
-	color: white;
-}
-/* send message button */
-
-#send_message {
-	background-color: rgba(0, 0, 0, 0);
-	border: 3px solid white;
-	color: white;
-	border-style: solid;
-	width: 100%;
-	height: 100%;
-	font-size: 20px;
-	font-family: sans-serif;
-}
-/* second block in contact section */
-
-.contact-block {
-	color: white;
-	font-size: 20px;
-	padding: 40px;
-}
-
-.contact-block div span img {
-	margin-bottom: -9px;
-}
-
-.contact-block div p {
-	text-align: justify;
-	margin-left: 20px;
-	font-family: sans-serif;
-}
-
-#my-info {
-	margin: 30px;
-}
-
-#my-info span:nth-child(2) {
-	margin-left: 20px;
-	font-family: sans-serif;
-}
 
 @media screen and (max-width: 900px) {
 	.contact-content {
