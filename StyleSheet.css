@@ -141,7 +141,7 @@ section:nth-child(2n + 1) {
 	font-weight: 900;
 	color: grey;
 	font-size: 20px;
-	/* text-align: justify; */
+	text-align: justify;
 	align-content: center;
 	/* word-spacing: normal; */
 }
